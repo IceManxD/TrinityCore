@@ -950,6 +950,60 @@ public:
     };
 };
 
+enum Rennflitzer
+{
+    ITEM_GESCHENK 	= 220000,
+	ITEM_TRANK		= 220001
+};
+
+class npc_seltsamer_rennflitzer : public CreatureScript
+{
+    public:
+        npc_seltsamer_rennflitzer() : CreatureScript("npc_seltsamer_rennflitzer") { }
+
+        bool OnGossipHello(Player* player, Creature* creature)
+        {
+            if (!player->HasItemCount(ITEM_GESCHENK, 1) && !player->HasItemCount(ITEM_TRANK, 1))
+                player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Gib mir den Special Beutel!", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
+
+            player->SEND_GOSSIP_MENU(player->GetGossipTextId(creature), creature->GetGUID());
+            return true;
+        }
+
+        bool OnGossipSelect(Player* player, Creature* creature, uint32 /*sender*/, uint32 action)
+        {
+            player->PlayerTalkClass->ClearMenus();
+
+            if (action == GOSSIP_ACTION_INFO_DEF + 1)
+                player->AddItem(ITEM_GESCHENK, 1);
+               
+            player->CLOSE_GOSSIP_MENU();
+            return true;
+        }
+};
+
+class npc_raceevent_start : public CreatureScript
+{
+    public:
+        npc_raceevent_start() : CreatureScript("npc_raceevent_start") { }
+
+        bool OnGossipHello(Player* player, Creature* creature)
+        {
+			player->ADD_GOSSIP_ITEM(GOSSIP_ICON_CHAT, "Los gehts!", GOSSIP_SENDER_MAIN, GOSSIP_ACTION_INFO_DEF + 1);
+            player->SEND_GOSSIP_MENU(player->GetGossipTextId(creature), creature->GetGUID());
+            return true;
+        }
+
+        bool OnGossipSelect(Player* player, Creature* creature, uint32 /*sender*/, uint32 action)
+        {
+            player->PlayerTalkClass->ClearMenus();
+
+			player->SetPhaseMask(2, false);
+			player->CLOSE_GOSSIP_MENU();
+			return true;
+        }
+};
+
 void AddSC_lol_event()
 {
     new npc_midsummer_scorchling();
@@ -958,6 +1012,8 @@ void AddSC_lol_event()
     new npc_xiri();
     new npc_preeven_maiev();
     new npc_ghoul();
+	new npc_seltsamer_rennflitzer();
+	new npc_raceevent_start();
 
     /*
     UPDATE creature_template SET scriptname = 'npc_midsummer_scorchling' WHERE entry = 26401;
