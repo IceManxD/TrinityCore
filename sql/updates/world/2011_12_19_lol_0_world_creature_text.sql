@@ -1,0 +1,45 @@
+DELETE FROM `script_texts` WHERE `entry` BETWEEN  -1578024 AND -1578005 OR (`npc_entry` IN (27654,27447,27655,27656));
+DELETE FROM `creature_text` WHERE `entry` IN (27654,27447,27655,27656);
+INSERT INTO `creature_text` (`entry`,`groupid`,`id`,`text`,`type`,`language`,`probability`,`emote`,`duration`,`sound`,`comment`) VALUES
+-- Drakos
+(27654,1,0,'The prisoners shall not go free. The word of Malygos is law!',14,0,0,5,0,13594,'Drakos the Interrogator - Aggro'),
+(27654,2,0,'A fitting punishment!',14,0,0,5,0,13602,'Drakos the Interrogator - Kill 1'),
+(27654,2,1,'Sentence: executed!',14,0,0,5,0,13603,'Drakos the Interrogator - Kill 2'),
+(27654,2,2,'Another casualty of war!',14,0,0,5,0,13604,'Drakos the Interrogator - Kill 3'),
+(27654,3,0,'It is too late to run!',14,0,0,5,0,13598,'Drakos the Interrogator - Pull 1'),
+(27654,3,1,'Gather ''round...',14,0,0,5,0,13599,'Drakos the Interrogator - Pull 2'),
+(27654,3,2,'None shall escape!',14,0,0,5,0,13600,'Drakos the Interrogator - Pull 3'),
+(27654,3,3,'I condemn you to death!',14,0,0,5,0,13601,'Drakos the Interrogator - Pull 4'),
+(27654,4,0,'Tremble, worms!',14,0,0,5,0,13595,'Drakos the Interrogator - Stomp 1'),
+(27654,4,1,'I will crush you!',14,0,0,5,0,13596,'Drakos the Interrogator - Stomp 2'),
+(27654,4,2,'Can you fly?',14,0,0,5,0,13597,'Drakos the Interrogator - Stomp 3'),
+(27654,5,0,'The war... goes on.',14,0,0,5,0,13605,'Drakos the Interrogator - Death'),
+-- Varos
+(27447,1,0,'There will be no mercy!',14,0,0,5,0,13649,'Varos Cloudstrider - Aggro'),
+(27447,2,0,'They are... too strong! Underestimated their... fortitude.',14,0,0,5,0,13655,'Varos Cloudstrider - Death'),
+(27447,3,0,'Blast them! Destroy them!',14,0,0,5,0,13650,'Varos Cloudstrider - Air Strike 1'),
+(27447,3,1,'Take no prisoners! Attack!',14,0,0,5,0,13651,'Varos Cloudstrider - Air Strike 2'),
+(27447,3,2,'Strike now! Obliterate them!',14,0,0,5,0,13652,'Varos Cloudstrider - Air Strike 3'),
+(27447,4,0,'You have been warned!',14,0,0,5,0,13653,'Varos Cloudstrider - Kill 1'),
+(27447,4,1,'The Oculus is ours!',14,0,0,5,0,13654,'Varos Cloudstrider - Kill 2'),
+(27447,5,0,'Intruders, your victory will be short-lived. I am Commander Varos Cloudstrider. My drakes control the skies and protect this conduit. I will see to it personnaly that the Oculus does not fall into your hands!',14,0,0,5,0,13648,'Varos Cloudstrider - Spawn'),
+-- Urom
+(27655,1,0,'Poor blind fools!',14,0,0,5,0,13638,'Mage-Lord Urom - Aggro'),
+(27655,2,0,'What do we have here... those would defy the Spell-Weaver? Those without foresight or understanding. How could I make you see? Malygos is saving the world from itself! Bah! You are hardly worth my time!',14,0,0,5,0,13635,'Mage-Lord Urom - Summon 1'),
+(27655,3,0,'Clearly my pets failed. Perhaps another demonstration is in order.',14,0,0,5,0,13636,'Mage-Lord Urom - Summon 2'),
+(27655,4,0,'Still you fight. Still you cling to misguided principles. If you survive, you''ll find me in the center ring.',14,0,0,5,0,13637,'Mage-Lord Urom - Summon 3'),
+(27655,5,0,'If only you understood!',14,0,0,5,0,13641,'Mage-Lord Urom - Kill 1'),
+(27655,5,1,'Now do you see? Do you?!',14,0,0,5,0,13642,'Mage-Lord Urom - Kill 2'),
+(27655,5,2,'Unfortunate, but necessary.',14,0,0,5,0,13643,'Mage-Lord Urom - Kill 3'),
+(27655,6,0,'A taste... just a small taste... of the Spell-Weaver''s power!',14,0,0,5,0,13639,'Mage-Lord Urom - Explotion 1'),
+(27655,6,1,'So much unstable energy... but worth the risk to destroy you!',14,0,0,5,0,13640,'Mage-Lord Urom - Explotion 2'),
+(27655,7,0,'Everything I''ve done... has been for Azeroth...',14,0,0,5,0,13644,'Mage-Lord Urom - Death'),
+-- Eregos
+(27656,1,0,'You brash interlopers are out of your element! I will ground you!',14,0,0,5,0,13623,'Ley-Guardian Eregos - Aggro'),
+(27656,2,0,'Simpletons! You cannot comprehend the forces you have set in motion. The ley line conduit will not be disrupted! Your defeat shall be absolute!',14,0,0,5,0,13622,'Ley-Guardian Eregos - Spawn'),
+(27656,3,0,'Such insolence... such arrogance... must be PUNISHED!',14,0,0,5,0,13624,'Ley-Guardian Eregos - Frenzy'),
+(27656,4,0,'It''s a long way down...',14,0,0,5,0,13628,'Ley-Guardian Eregos - Kill 1'),
+(27656,4,1,'Back to the earth with you!',14,0,0,5,0,13629,'Ley-Guardian Eregos - Kill 2'),
+(27656,4,2,'Enjoy the fall!',14,0,0,5,0,13630,'Ley-Guardian Eregos - Kill 3'),
+(27656,5,0,'Savor this small victory, foolish little creatures. You and your dragon allies have won this battle. But we will win... the Nexus War.',14,0,0,5,0,13631,'Ley-Guardian Eregos - Death'),
+(27656,6,0,'Anomalies form as Ley-Guardian Eregos shifts into the Astral Plane!',41,0,0,0,0,0,'Ley-Guardian Eregos - Astral');

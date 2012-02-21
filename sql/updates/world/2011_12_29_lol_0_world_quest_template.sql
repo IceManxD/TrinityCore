@@ -1,0 +1,2 @@
+-- Fix Quest 'Who are they?' [A] #10040 - had wrong values - restore with TDB 335.11.44 values
+UPDATE `quest_template` SET `RequiredNpcOrGo1`=26464,`RequiredNpcOrGo2`=26465,`RequiredNpcOrGo3`=26466 WHERE `id`=10040;

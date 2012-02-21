@@ -1,0 +1,1 @@
+UPDATE `creature_template` SET `AIName`='',`ScriptName`='npc_slain_tualiq_villager' WHERE `entry`=34852;

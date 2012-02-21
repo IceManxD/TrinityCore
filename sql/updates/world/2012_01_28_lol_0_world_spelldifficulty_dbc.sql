@@ -1,0 +1,1 @@
+DELETE FROM `spelldifficulty_dbc` WHERE `id` IN (3049,3050,3051,3052,3054,3062);
